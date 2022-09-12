@@ -5,7 +5,7 @@ function amr() {
   BG = e.options[e.selectedIndex].text;
   COLLEGE = document.getElementById("College").value;
   CONTACT = document.getElementById("mob").value;
-  DOB = document.getElementById("DOB").value;
+  DOB = document.getElementById("dob").value;
   EMAIL = document.getElementById("email").value;
   FATHER = document.getElementById("father").value;
   var g = document.getElementById("gender");
@@ -24,15 +24,13 @@ function validateEmail(email) {
   return re.test(email);
 }
 
-// console.log(validateEmail('anystring@anystring.anystring'));
-
 document.getElementById("insert").onclick = function () {
   amr();
   if (ADDRESS.length > 0 && BG.length > 0 && COLLEGE.length > 0 && CONTACT.length > 0 && DOB.length > 0 && EMAIL.length > 0 && FATHER.length > 0 && GENDER.length>0
     && NAME.length > 0 && POSITION.length>0 && SESSION.length > 0 && VERIFIEDBY.length > 0 && WORKINKWA.length > 0 && CERTIFICATEID.length > 0) {
-    if (GENDER == "M" || GENDER == "F" || GENDER == "O") {
+    if (GENDER == "Male" || GENDER == "Female" || GENDER == "Other") {
       if (BG == "A+" || BG == "A-" || BG == "B+" || BG == "B-" || BG == "O+" || BG == "O-" || BG == "AB+" || BG == "AB-") {
-        if (CONTACT.length == 10) {
+        if (CONTACT.length==10) {
           if (validateEmail(EMAIL) == true) {
             if (POSITION.length > 0) {
               if (COLLEGE.length > 0) {
